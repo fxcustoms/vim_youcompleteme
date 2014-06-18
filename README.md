@@ -1,4 +1,4 @@
-# YouCompleteMe: a code-completion engine for Vim
+YouCompleteMe: a code-completion engine for Vim
 ===============================================
 
 ## Disclaimer
