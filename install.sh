@@ -26,10 +26,8 @@ function homebrew_cmake_install {
 }
 
 function python_finder {
-  #python_library="-DPYTHON_LIBRARY="
-  python_library = "/Users/ldong/.pyenv/versions/2.7.6/lib/python2.7/config"
-  #python_include="-DPYTHON_INCLUDE_DIR="
-  python_include="/Users/ldong/.pyenv/versions/2.7.6/lib/python2.7/site-packages"
+  python_library="-DPYTHON_LIBRARY="
+  python_include="-DPYTHON_INCLUDE_DIR="
 
   # The CMake 'FindPythonLibs' Module does not work properly.
   # So we are forced to do its job for it.
@@ -77,7 +75,8 @@ function install {
   pushd $build_dir
 
   if [[ `uname -s` == "Darwin" ]]; then
-    cmake -G "Unix Makefiles" $(python_finder) "$@" . $ycm_dir/cpp
+    # cmake -G "Unix Makefiles" $(python_finder) "$@" . $ycm_dir/cpp
+    cmake -G "Unix Makefiles" . $ycm_dir/cpp
   else
     cmake -G "Unix Makefiles" "$@" . $ycm_dir/cpp
   fi
@@ -184,3 +183,4 @@ if $omnisharp_completer; then
   $buildcommand
   cd $ycm_dir
 fi
+
