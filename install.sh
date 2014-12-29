@@ -76,7 +76,7 @@ function install {
 
   if [[ `uname -s` == "Darwin" ]]; then
     # cmake -G "Unix Makefiles" $(python_finder) "$@" . $ycm_dir/cpp
-    cmake -G "Unix Makefiles" . $ycm_dir/cpp
+    cmake -G "Unix Makefiles" "-DPYTHON_EXECUTABLE=/usr/local/Cellar/python/2.7.9/bin/python2.7" $(python_finder) "$@" . $ycm_dir/cpp
   else
     cmake -G "Unix Makefiles" "$@" . $ycm_dir/cpp
   fi
