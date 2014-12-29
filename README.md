@@ -1,5 +1,4 @@
-#YouCompleteMe
-===
+# YouCompleteMe
 
 ## Disclaimer
 
@@ -28,3 +27,27 @@ You also have to add this to `.vimrc`
 `let g:ycm_path_to_python_interpreter = '/Users/ldong/.pyenv/shims/python'`
 
 <!-- Read more [here](https://gist.github.com/ldong/9a22fe008e896d574ade) -->
+
+
+## Update
+Sun Dec 28 22:04:04 EST 2014
+
+```
+brew install python
+brew unlink python && brew link python
+brew rm --force macvim
+brew install macvim --override-system-vim
+```
+add this to **.vimrc**
+
+`let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'`
+
+After figure out your brewed python version, go to install.sh, edit
+
+```
+"-DPYTHON_EXECUTABLE=/usr/local/Cellar/python/2.7.9/bin/python2.7"
+```
+
+to `pyexe`
+
+then run `./install.sh --clang-completer`
